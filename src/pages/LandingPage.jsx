@@ -1,4 +1,5 @@
 import React from 'react';
+import './LandingPage.css';
 import SearchBar from '../components/common/SearchBar';
 import ServiceCard from '../components/cards/ServiceCard';
 
@@ -21,19 +22,15 @@ const LandingPage = ({ onPageChange }) => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-indigo-500 to-purple-600 min-h-screen">
-      <div className="max-w-6xl mx-auto px-5 pt-20">
-        <div className="text-center py-16 text-white">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">
-            Your Digital Nomad Journey Starts Here
-          </h1>
-          <p className="text-xl mb-8 opacity-90">
-            Find workspaces, accommodation, restaurants, and connect with fellow nomads worldwide
-          </p>
-          
-          <SearchBar />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+    <div className="landing-page">
+      <div className="container">
+        <div className="hero">
+          <h1>Your Digital Nomad Journey Starts Here</h1>
+          <p>Find workspaces, accommodation, restaurants, and connect with fellow nomads worldwide</p>
+          <div className="search-bar-wrapper">
+            <SearchBar />
+          </div>
+          <div className="service-cards">
             {services.map((service, index) => (
               <ServiceCard 
                 key={index}
